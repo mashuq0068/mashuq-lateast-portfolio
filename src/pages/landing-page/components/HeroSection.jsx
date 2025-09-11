@@ -39,8 +39,8 @@ const HeroSection = () => {
 
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/resume/mashuq-resume.pdf';
-    link.download = 'Mashuq-Resume.pdf';
+       // link.href = '/assets/resume/mashuq-resume.pdf';
+    // link.download = 'Mashuq-Resume.pdf';
     link.click();
   };
 
