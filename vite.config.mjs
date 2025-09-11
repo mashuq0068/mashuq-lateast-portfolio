@@ -10,6 +10,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 2000,
   },
   plugins: [tsconfigPaths(), react(), tagger()],
+  
   server: {
     port: 5173,
     host: "0.0.0.0",
