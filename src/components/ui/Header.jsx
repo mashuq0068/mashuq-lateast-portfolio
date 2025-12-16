@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Icon from '../AppIcon';
 import Button from './Button';
+import { handleResumeDownload } from 'utils/handleResumeDownload';
+import { handleBookConsultation } from 'utils/handleBookConsultation';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,12 +45,7 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-       // link.href = '/assets/resume/mashuq-resume.pdf';
-    // link.download = 'Mashuq-Resume.pdf';
-    link.click();
-  };
+
 
   return (
     <header 
@@ -100,7 +97,7 @@ const Header = () => {
             <Button
               variant="default"
               size="sm"
-              onClick={() => scrollToSection('#contact')}
+              onClick={handleBookConsultation}
               iconName="Calendar"
               iconPosition="left"
               iconSize={16}

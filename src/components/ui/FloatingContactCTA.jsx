@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import Icon from '../AppIcon';
+import { handleResumeDownload } from 'utils/handleResumeDownload';
+import { handleBookConsultation } from 'utils/handleBookConsultation';
 
 const FloatingContactCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isContactSectionVisible, setIsContactSectionVisible] = useState(false);
   const [showExitIntent, setShowExitIntent] = useState(false);
+  const [autoShown, setAutoShown] = useState(false); // ensures 20s trigger happens only once
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,29 +32,27 @@ const FloatingContactCTA = () => {
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mouseleave', handleMouseLeave);
 
+    // Show CTA automatically after 20 seconds, only once
+    const timer = setTimeout(() => {
+      if (!autoShown) {
+        setShowExitIntent(true);
+        setAutoShown(true);
+      }
+    }, 20000); // 20 seconds
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      clearTimeout(timer);
     };
   }, []);
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    // link.href = '/assets/resume/mashuq-resume.pdf';
-    // link.download = 'Mashuq-Resume.pdf';
-    link.click();
-  };
-
-  const closeExitIntent = () => {
-    setShowExitIntent(false);
-  };
+  const closeExitIntent = () => setShowExitIntent(false);
 
   if (!isVisible || isContactSectionVisible) return null;
 
@@ -63,7 +64,7 @@ const FloatingContactCTA = () => {
           <Button
             variant="default"
             size="lg"
-            onClick={scrollToContact}
+            onClick={handleBookConsultation}
             iconName="MessageCircle"
             iconPosition="left"
             className="tech-shadow animate-pulse"
@@ -99,7 +100,7 @@ const FloatingContactCTA = () => {
           <Button
             variant="default"
             size="sm"
-            onClick={scrollToContact}
+            onClick={handleBookConsultation}
             iconName="Calendar"
             iconPosition="left"
             className="flex-1"
@@ -109,7 +110,7 @@ const FloatingContactCTA = () => {
         </div>
       </div>
 
-      {/* Exit Intent Modal */}
+      {/* Exit Intent / Auto 20s Modal */}
       {showExitIntent && (
         <div className="fixed inset-0 z-200 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-card border border-border rounded-lg p-6 max-w-md w-full tech-shadow animate-fade-in">
@@ -119,7 +120,7 @@ const FloatingContactCTA = () => {
                   Wait! Don't miss out
                 </h3>
                 <p className="text-muted-foreground text-sm">
-                  Get a free 15-minute technical consultation to discuss your project needs.
+                  Get a free 30-minute technical consultation to discuss your project needs.
                 </p>
               </div>
               <button
@@ -134,10 +135,7 @@ const FloatingContactCTA = () => {
               <Button
                 variant="default"
                 fullWidth
-                onClick={() => {
-                  scrollToContact();
-                  closeExitIntent();
-                }}
+                onClick={() => handleBookConsultation()}
                 iconName="Calendar"
                 iconPosition="left"
               >
@@ -146,10 +144,7 @@ const FloatingContactCTA = () => {
               <Button
                 variant="outline"
                 fullWidth
-                onClick={() => {
-                  handleResumeDownload();
-                  closeExitIntent();
-                }}
+                onClick={() => {handleResumeDownload()}}
                 iconName="Download"
                 iconPosition="left"
               >
@@ -157,9 +152,7 @@ const FloatingContactCTA = () => {
               </Button>
             </div>
             
-            <p className="text-xs text-muted-foreground text-center mt-4">
-              Currently accepting 2 new projects for Q1 2025
-            </p>
+
           </div>
         </div>
       )}

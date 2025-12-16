@@ -129,7 +129,7 @@ const AboutSection = () => {
                 <div className="text-center bg-muted/20 rounded-lg p-4">
                   <Icon name="MapPin" size={20} className="text-primary mx-auto mb-2" />
                   <div className="text-sm font-medium text-foreground">Location</div>
-                  <div className="text-xs text-muted-foreground">Dhaka, Bangladesh</div>
+                  <div className="text-xs text-muted-foreground">Khulna, Bangladesh</div>
                 </div>
                 <div className="text-center bg-muted/20 rounded-lg p-4">
                   <Icon name="Calendar" size={20} className="text-accent mx-auto mb-2" />
@@ -152,7 +152,7 @@ const AboutSection = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Icon name="Mail" size={16} className="text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">mashuq.dev@email.com</span>
+                  <span className="text-sm text-muted-foreground">mashuq.dev@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Icon name="Phone" size={16} className="text-muted-foreground" />
@@ -227,7 +227,7 @@ const AboutSection = () => {
         </div>
 
         {/* Achievement Stats */}
-        <div className="bg-card border border-border rounded-lg p-8 tech-shadow">
+        {/* <div className="bg-card border border-border rounded-lg p-8 tech-shadow">
           <h3 className="text-xl font-bold text-foreground text-center mb-8">
             Professional Achievements
           </h3>
@@ -249,7 +249,7 @@ const AboutSection = () => {
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

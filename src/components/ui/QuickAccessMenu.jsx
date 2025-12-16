@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Icon from '../AppIcon';
 import Button from './Button';
+import { handleResumeDownload } from 'utils/handleResumeDownload';
+import { handleBookConsultation } from 'utils/handleBookConsultation';
 
 const QuickAccessMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,13 +73,7 @@ const QuickAccessMenu = () => {
     setIsOpen(false);
   };
 
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-       // link.href = '/assets/resume/mashuq-resume.pdf';
-    // link.download = 'Mashuq-Resume.pdf';
-    link.click();
-    setIsOpen(false);
-  };
+
 
   if (!isOpen) {
     return (
@@ -149,7 +145,7 @@ const QuickAccessMenu = () => {
             <Button
               variant="default"
               size="sm"
-              onClick={() => scrollToSection('#contact')}
+              onClick={handleBookConsultation}
               iconName="Calendar"
               iconPosition="left"
               className="flex-1"

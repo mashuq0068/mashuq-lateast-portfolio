@@ -1,6 +1,8 @@
 import React from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import { handleResumeDownload } from 'utils/handleResumeDownload';
+import { handleBookConsultation } from 'utils/handleBookConsultation';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,25 +11,20 @@ const Footer = () => {
     {
       name: 'GitHub',
       icon: 'Github',
-      url: 'https://github.com/mashuq',
+      url: 'https://github.com/mashuq0068',
       description: 'View my code repositories'
     },
     {
       name: 'LinkedIn',
       icon: 'Linkedin',
-      url: 'https://linkedin.com/in/mashuq-rahman',
+      url: 'https://linkedin.com/in/md-mashuqur-rahman-3aaab8260/',
       description: 'Connect professionally'
     },
-    {
-      name: 'Twitter',
-      icon: 'Twitter',
-      url: 'https://twitter.com/mashuq_dev',
-      description: 'Follow for tech updates'
-    },
+   
     {
       name: 'Email',
       icon: 'Mail',
-      url: 'mailto:mashuq.dev@email.com',
+      url: 'mailto:mashuq0068@gmail.com',
       description: 'Send me an email'
     }
   ];
@@ -56,12 +53,6 @@ const Footer = () => {
     }
   };
 
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-       // link.href = '/assets/resume/mashuq-resume.pdf';
-    // link.download = 'Mashuq-Resume.pdf';
-    link.click();
-  };
 
   return (
     <footer className="bg-gradient-to-b from-background to-muted/20 border-t border-border">
@@ -86,7 +77,7 @@ const Footer = () => {
             </p>
 
             {/* Availability Status */}
-            <div className="bg-card border border-border rounded-lg p-4">
+            {/* <div className="bg-card border border-border rounded-lg p-4">
               <div className="flex items-center space-x-3 mb-2">
                 <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
                 <span className="font-semibold text-foreground">Available for Projects</span>
@@ -94,7 +85,7 @@ const Footer = () => {
               <p className="text-sm text-muted-foreground">
                 Currently accepting 2 new projects for Q1 2025
               </p>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -133,16 +124,16 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Icon name="Mail" size={16} className="text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">mashuq.dev@email.com</span>
+                <span className="text-sm text-muted-foreground">mashuq0068@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Icon name="MapPin" size={16} className="text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">Dhaka, Bangladesh</span>
+                <span className="text-sm text-muted-foreground">Khulna, Bangladesh</span>
               </div>
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <Icon name="Clock" size={16} className="text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">GMT+6 (Available 9AM-6PM)</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Social Links */}
@@ -173,12 +164,12 @@ const Footer = () => {
               <Button
                 variant="default"
                 size="sm"
-                onClick={() => scrollToSection('#contact')}
+                onClick={handleBookConsultation }
                 iconName="MessageCircle"
                 iconPosition="left"
                 fullWidth
               >
-                Start a Project
+                Hire Me
               </Button>
               <Button
                 variant="outline"

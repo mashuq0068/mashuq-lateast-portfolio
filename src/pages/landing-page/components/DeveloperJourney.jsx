@@ -6,104 +6,74 @@ const DeveloperJourney = () => {
   const [expandedMilestone, setExpandedMilestone] = useState(null);
   const sectionRef = useRef(null);
 
-  const milestones = [
-    {
-      id: 1,
-      year: '2022',
-      title: 'Self-Taught Journey Begins',
-      subtitle: 'From Zero to Hero',
-      description: 'Started learning web development through online resources, building first projects with HTML, CSS, and JavaScript.',
-      achievements: [
-        'Completed 500+ hours of coding practice',
-        'Built 10+ personal projects',
-        'Mastered JavaScript fundamentals',
-        'Created responsive web designs'
-      ],
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Git'],
-      icon: 'BookOpen',
-      color: 'text-blue-400'
-    },
-    {
-      id: 2,
-      year: '2023',
-      title: 'React & Modern Stack',
-      subtitle: 'Framework Mastery',
-      description: 'Dove deep into React ecosystem, learning modern development practices and building complex applications.',
-      achievements: [
-        'Mastered React hooks and state management',
-        'Built full-stack applications',
-        'Learned Node.js and Express',
-        'Implemented database integration'
-      ],
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL'],
-      icon: 'Code',
-      color: 'text-cyan-400'
-    },
-    {
-      id: 3,
-      year: '2023',
-      title: 'Programming Hero Certification',
-      subtitle: 'Formal Recognition',
-      description: 'Completed comprehensive web development course, earning certification in full-stack development.',
-      achievements: [
-        'Graduated with distinction',
-        'Built capstone project',
-        'Mentored junior developers',
-        'Received industry recognition'
-      ],
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase'],
-      icon: 'Award',
-      color: 'text-yellow-400'
-    },
-    {
-      id: 4,
-      year: '2024',
-      title: 'Code Prophet - Developer',
-      subtitle: 'First Professional Role',
-      description: 'Joined Code Prophet as a full-stack developer, working on client projects and internal tools.',
-      achievements: [
-        'Delivered 5+ client projects',
-        'Improved application performance by 40%',
-        'Led junior developer training',
-        'Implemented CI/CD pipelines'
-      ],
-      technologies: ['React', 'Next.js', 'PostgreSQL', 'AWS', 'Docker'],
-      icon: 'Briefcase',
-      color: 'text-green-400'
-    },
-    {
-      id: 5,
-      year: '2024',
-      title: 'TS4U - Senior Developer',
-      subtitle: 'Leadership & Growth',
-      description: 'Advanced to senior role at TS4U, leading development teams and architecting scalable solutions.',
-      achievements: [
-        'Led team of 4 developers',
-        'Architected microservices platform',
-        'Reduced deployment time by 60%',
-        'Mentored 10+ junior developers'
-      ],
-      technologies: ['React', 'Node.js', 'Kubernetes', 'GraphQL', 'Redis'],
-      icon: 'Users',
-      color: 'text-purple-400'
-    },
-    {
-      id: 6,
-      year: '2025',
-      title: 'Freelance & Consulting',
-      subtitle: 'Independent Success',
-      description: 'Launched independent consulting practice, helping startups and enterprises build modern web applications.',
-      achievements: [
-        'Serving 3+ enterprise clients',
-        'Building scalable SaaS platforms',
-        'Consulting on tech architecture',
-        'Growing development team'
-      ],
-      technologies: ['Next.js', 'Supabase', 'Vercel', 'Stripe', 'OpenAI'],
-      icon: 'Rocket',
-      color: 'text-orange-400'
-    }
-  ];
+ const milestones = [
+  // Learning Journey
+  {
+    id: 1,
+    year: '2022',
+    title: 'Learning Journey Begins',
+    subtitle: 'Buying Courses & Self-Study',
+    description: 'Started learning web development through online courses, tutorials, and hands-on projects.',
+    achievements: [
+      'Completed multiple online courses',
+      'Built first web projects with HTML, CSS, and JS',
+      'Learned Git and version control',
+    ],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Git'],
+    icon: 'BookOpen',
+    color: 'text-blue-400'
+  },
+  // Professional Experience
+  {
+    id: 2,
+    year: '01/01/2024 – 31/04/2024',
+    title: 'Frontend Developer - TS4U (USA)',
+    subtitle: 'Learning & Collaboration',
+    description: 'Built LMS platform modules with JavaScript, React.js, Node.js. Optimized components, improved UX, integrated APIs.',
+    achievements: [
+      'Built interactive modules',
+      'Optimized performance',
+      'Collaborated with backend team',
+      'Improved cross-browser compatibility'
+    ],
+    technologies: ['JavaScript', 'React.js', 'Node.js'],
+    icon: 'Monitor',
+    color: 'text-purple-400'
+  },
+  {
+    id: 3,
+    year: '01/07/2024 – 01/08/2025',
+    title: 'Frontend Developer - Code Prophet (Bangladesh)',
+    subtitle: 'Dynamic Management Systems',
+    description: 'Developed responsive web apps for universities and hospitals using React, Node.js, Bootstrap. Implemented dashboards & reusable UI components.',
+    achievements: [
+      'Delivered multiple client projects',
+      'Built interactive dashboards',
+      'Reused UI components across projects',
+      'Ensured responsive design'
+    ],
+    technologies: ['React.js', 'Node.js', 'Bootstrap'],
+    icon: 'Monitor',
+    color: 'text-green-400'
+  },
+  {
+    id: 4,
+    year: '01/08/2024 – Present',
+    title: 'Full-stack Developer - Alfastack Solution (India)',
+    subtitle: 'ERP & AI/ML Solutions',
+    description: 'Worked on ERP applications, websites, and AI/ML-driven solutions. Developed computer vision modules, automated workflows, and backend integrations.',
+    achievements: [
+      'Built scalable full-stack applications',
+      'Optimized database performance',
+      'Integrated backend services with Node.js & Frappe',
+      'Automated workflows for enterprise clients'
+    ],
+    technologies: ['React.js', 'Node.js', 'Frappe', 'PostgreSQL', 'AI/ML'],
+    icon: 'Server',
+    color: 'text-blue-400'
+  }
+];
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -129,7 +99,7 @@ const DeveloperJourney = () => {
   };
 
   return (
-    <section id="journey" ref={sectionRef} className="py-20 bg-gradient-to-b from-background to-muted/10">
+    <section id="experience" ref={sectionRef} className="py-20 bg-gradient-to-b from-background to-muted/10">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -230,7 +200,7 @@ const DeveloperJourney = () => {
         </div>
 
         {/* Journey Stats */}
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="text-center bg-card border border-border rounded-lg p-6 tech-shadow">
             <div className="text-2xl font-bold text-primary mb-2">3+</div>
             <div className="text-sm text-muted-foreground">Years Learning</div>
@@ -247,7 +217,7 @@ const DeveloperJourney = () => {
             <div className="text-2xl font-bold text-warning mb-2">15+</div>
             <div className="text-sm text-muted-foreground">Technologies</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

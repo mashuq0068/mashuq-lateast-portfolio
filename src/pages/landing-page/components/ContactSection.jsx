@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
-import Select from '../../../components/ui/Select';
+
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -19,72 +19,40 @@ const ContactSection = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
 
-  const projectTypeOptions = [
-    { value: '', label: 'Select project type' },
-    { value: 'web-app', label: 'Web Application' },
-    { value: 'ecommerce', label: 'E-commerce Platform' },
-    { value: 'portfolio', label: 'Portfolio Website' },
-    { value: 'saas', label: 'SaaS Platform' },
-    { value: 'api', label: 'API Development' },
-    { value: 'consultation', label: 'Technical Consultation' },
-    { value: 'other', label: 'Other' }
-  ];
 
-  const budgetOptions = [
-    { value: '', label: 'Select budget range' },
-    { value: 'under-5k', label: 'Under $5,000' },
-    { value: '5k-10k', label: '$5,000 - $10,000' },
-    { value: '10k-25k', label: '$10,000 - $25,000' },
-    { value: '25k-50k', label: '$25,000 - $50,000' },
-    { value: 'over-50k', label: 'Over $50,000' },
-    { value: 'discuss', label: 'Let\'s discuss' }
-  ];
-
-  const timelineOptions = [
-    { value: '', label: 'Select timeline' },
-    { value: 'asap', label: 'ASAP (Rush job)' },
-    { value: '1-month', label: '1 Month' },
-    { value: '2-3-months', label: '2-3 Months' },
-    { value: '3-6-months', label: '3-6 Months' },
-    { value: 'flexible', label: 'Flexible' }
-  ];
-
-  const priorityOptions = [
-    { value: 'normal', label: 'Normal (48hr response)' },
-    { value: 'urgent', label: 'Urgent (24hr response)' },
-    { value: 'emergency', label: 'Emergency (Same day)' }
-  ];
-
-  const contactMethods = [
+const contactMethods = [
     {
       icon: 'Mail',
       title: 'Email',
-      value: 'mashuq.dev@email.com',
+      value: 'mashuq0068@gmail.com',
       description: 'Best for detailed project discussions',
       color: 'text-blue-400'
     },
     {
       icon: 'Phone',
-      title: 'Phone',
-      value: '+880 1234 567890',
+      title: 'Phone(WhatsApp)',
+      value: '+8801403972749',
       description: 'Available Mon-Fri, 9AM-6PM (GMT+6)',
       color: 'text-green-400'
     },
     {
-      icon: 'MessageCircle',
-      title: 'WhatsApp',
-      value: '+880 1234 567890',
-      description: 'Quick questions and updates',
-      color: 'text-green-500'
+     icon: 'Github', // fixed
+      title: 'GitHub',
+      value: 'github.com/mashuq0068',
+      description: 'Check out my projects and repositories',
+      color: 'text-gray-800',
+      link: 'https://github.com/mashuq0068'
     },
     {
-      icon: 'Calendar',
-      title: 'Schedule Call',
-      value: 'Book 30-min consultation',
-      description: 'Free technical consultation',
-      color: 'text-purple-400'
+      icon: 'Linkedin',
+      title: 'LinkedIn',
+      value: 'linkedin.com/in/md-mashuqur-rahman-3aaab8260',
+      description: 'Connect professionally on LinkedIn',
+      color: 'text-blue-600',
+      link: 'https://www.linkedin.com/in/md-mashuqur-rahman-3aaab8260/'
     }
   ];
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -198,24 +166,37 @@ const ContactSection = () => {
           {/* Contact Methods */}
           <div className="space-y-6">
             <h3 className="text-xl font-bold text-foreground mb-6">Get In Touch</h3>
-            
-            {contactMethods.map((method, index) => (
-              <div key={index} className="bg-card border border-border rounded-lg p-6 tech-shadow hover:tech-shadow-lg transition-all duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-muted/20 rounded-lg flex items-center justify-center">
-                    <Icon name={method.icon} size={24} className={method.color} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-foreground mb-1">{method.title}</h4>
-                    <p className="text-sm text-accent font-medium mb-2">{method.value}</p>
-                    <p className="text-xs text-muted-foreground">{method.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+       {contactMethods.map((method, index) => {
+  const href =
+    method.link ||
+    (method.title === 'Email' ? `mailto:${method.value}` :
+    method.title === 'Phone(WhatsApp)' ? `tel:${method.value}` : '#');
+
+  return (
+    <a
+      key={index}
+      href={href}
+      target={method.link ? "_blank" : "_self"}
+      rel={method.link ? "noopener noreferrer" : undefined}
+      className="block bg-card border border-border rounded-lg p-6 tech-shadow hover:tech-shadow-lg transition-all duration-300"
+    >
+      <div className="flex items-start space-x-4">
+        <div className="w-12 h-12 bg-muted/20 rounded-lg flex items-center justify-center">
+          <Icon name={method.icon} size={24} className={method.color} />
+        </div>
+        <div className="flex-1">
+          <h4 className="font-semibold text-foreground mb-1">{method.title}</h4>
+          <p className="text-sm text-accent font-medium mb-2">{method.value}</p>
+          <p className="text-xs text-muted-foreground">{method.description}</p>
+        </div>
+      </div>
+    </a>
+  );
+})}
+
 
             {/* Availability Status */}
-            <div className="bg-card border border-border rounded-lg p-6 tech-shadow">
+            {/* <div className="bg-card border border-border rounded-lg p-6 tech-shadow">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
                 <span className="font-semibold text-foreground">Currently Available</span>
@@ -234,7 +215,7 @@ const ContactSection = () => {
                   <span className="text-foreground">Immediately</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Contact Form */}
@@ -290,7 +271,7 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                {/* <div className="grid md:grid-cols-2 gap-6">
                   <Input
                     label="Company/Organization"
                     type="text"
@@ -308,8 +289,7 @@ const ContactSection = () => {
                     required
                   />
                 </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
+           <div className="grid md:grid-cols-2 gap-6">
                   <Select
                     label="Budget Range"
                     options={budgetOptions}
@@ -324,19 +304,13 @@ const ContactSection = () => {
                     onChange={(value) => handleSelectChange('timeline', value)}
                     description="When do you need this completed?"
                   />
-                </div>
+                </div>  */}
 
-                <Select
-                  label="Priority Level"
-                  options={priorityOptions}
-                  value={formData.priority}
-                  onChange={(value) => handleSelectChange('priority', value)}
-                  description={`Expected response time: ${getResponseTime()}`}
-                />
+              
 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Project Description *
+                   Your Message *
                   </label>
                   <textarea
                     name="message"
@@ -344,7 +318,7 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     placeholder="Please describe your project in detail. Include features, requirements, and any specific technologies you prefer..."
                     rows={6}
-                    className="w-full px-3 py-2 bg-input border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none"
+                    className="w-full px-3 py-2  bg-background border border-border rounded-md text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none"
                     required
                   />
                   {errors.message && (
@@ -379,34 +353,43 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className="mt-16 bg-card border border-border rounded-lg p-8 tech-shadow">
-          <h3 className="text-xl font-bold text-foreground text-center mb-8">
-            Frequently Asked Questions
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">What's your typical response time?</h4>
-                <p className="text-sm text-muted-foreground">I respond to all inquiries within 24-48 hours, often much sooner during business hours.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">Do you work with international clients?</h4>
-                <p className="text-sm text-muted-foreground">Yes! I work with clients worldwide and am comfortable with different time zones and communication preferences.</p>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">What information should I include in my inquiry?</h4>
-                <p className="text-sm text-muted-foreground">Project goals, timeline, budget range, and any specific requirements or technologies you prefer.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">Do you offer free consultations?</h4>
-                <p className="text-sm text-muted-foreground">Yes! I offer a free 30-minute consultation to discuss your project and provide initial recommendations.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    {/* FAQ Section */}
+<div className="mt-16 bg-card border border-border rounded-lg p-8 tech-shadow">
+  <h3 className="text-xl font-bold text-foreground text-center mb-8">
+    Frequently Asked Questions
+  </h3>
+  <div className="grid md:grid-cols-2 gap-8">
+    <div className="space-y-4">
+      <div>
+        <h4 className="font-semibold text-foreground mb-2">What kind of projects do you work on?</h4>
+        <p className="text-sm text-muted-foreground">
+          I mainly focus on full-stack web development, building APIs, integrating databases, and creating efficient server-side solutions. I also take freelance and remote projects occasionally.
+        </p>
+      </div>
+      <div>
+        <h4 className="font-semibold text-foreground mb-2">How quickly can you respond?</h4>
+        <p className="text-sm text-muted-foreground">
+          I typically respond to inquiries within 24-48 hours.
+        </p>
+      </div>
+    </div>
+    <div className="space-y-4">
+      <div>
+        <h4 className="font-semibold text-foreground mb-2">What information should I provide for a project?</h4>
+        <p className="text-sm text-muted-foreground">
+          Include the project goals, required features, preferred technologies, timeline, and any existing resources or constraints.
+        </p>
+      </div>
+      <div>
+        <h4 className="font-semibold text-foreground mb-2">Do you offer project guidance?</h4>
+        <p className="text-sm text-muted-foreground">
+          Yes! I provide advice on architecture, technology choices, and implementation strategies for your backend projects.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );

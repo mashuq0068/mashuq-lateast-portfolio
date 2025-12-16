@@ -34,9 +34,8 @@ const LandingPage = () => {
       "description": "Experienced full-stack developer specializing in React, Next.js, Node.js, and PostgreSQL",
       "url": window.location.origin,
       "sameAs": [
-        "https://github.com/mashuq",
-        "https://linkedin.com/in/mashuq-rahman",
-        "https://twitter.com/mashuq_dev"
+        "https://github.com/mashuq0068",
+        "https://linkedin.com/in/md-mashuqur-rahman-3aaab8260/",
       ],
       "knowsAbout": [
         "React",

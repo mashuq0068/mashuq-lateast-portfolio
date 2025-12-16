@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../../components/ui/Button';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
+import { handleResumeDownload } from 'utils/handleResumeDownload';
+import { handleBookConsultation } from 'utils/handleBookConsultation';
 
 const HeroSection = () => {
   const [typewriterText, setTypewriterText] = useState('');
@@ -37,19 +39,8 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [typewriterText, currentIndex, isDeleting]);
 
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-       // link.href = '/assets/resume/mashuq-resume.pdf';
-    // link.download = 'Mashuq-Resume.pdf';
-    link.click();
-  };
 
-  const handleBookConsultation = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
   const githubContributions = [
     { day: 'Mon', commits: 3 },
@@ -88,7 +79,7 @@ const HeroSection = () => {
               </div>
               
               <p className="text-lg text-muted-foreground max-w-xl">
-                Crafting complete solutions with Next.js, React, and PostgreSQL - from self-taught foundations to professional success. 
+                Crafting complete solutions with Next.js, React, Node js, PostgreSQL, MongoDB. From self-taught foundations to professional success. 
                 Transforming startup ideas into scalable web applications.
               </p>
             </div>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
-import Button from '../../../components/ui/Button';
+import React, { useState, useEffect } from "react";
+import Icon from "../../../components/AppIcon";
+import Image from "../../../components/AppImage";
+import Button from "../../../components/ui/Button";
 
 const FeaturedProjects = () => {
   const [activeProject, setActiveProject] = useState(0);
@@ -11,100 +11,194 @@ const FeaturedProjects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Swift-Garden',
-      subtitle: 'E-commerce Plant Store',
-      description: 'A modern e-commerce platform for plant enthusiasts with advanced filtering, wishlist functionality, and seamless checkout experience.',
+      title: "Swift-Garden",
+      subtitle: "E-commerce Plant Store",
+      description:
+        "A modern e-commerce platform for plant enthusiasts with advanced filtering, wishlist functionality, and seamless checkout experience.",
       longDescription: `Swift-Garden is a comprehensive e-commerce solution built for plant lovers. The platform features an intuitive product catalog with advanced filtering options, user authentication, shopping cart functionality, and integrated payment processing.\n\nKey features include real-time inventory management, user reviews and ratings, wishlist functionality, and responsive design optimized for mobile shopping. The admin dashboard provides comprehensive analytics and order management capabilities.`,
-      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-      liveUrl: 'https://swift-garden-demo.vercel.app',
-      githubUrl: 'https://github.com/mashuq/swift-garden',
-      category: 'E-commerce',
-      status: 'Live',
+      image:
+        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+      liveUrl: "https://swift-garden-frontned.vercel.app/",
+      githubUrl: "https://github.com/mashuq/swift-garden",
+      category: "E-commerce",
+      status: "Live",
       metrics: {
-        users: '2.5K+',
-        orders: '850+',
-        rating: '4.8/5',
-        uptime: '99.9%'
+        users: "2.5K+",
+        orders: "850+",
+        rating: "4.8/5",
+        uptime: "99.9%",
       },
       testimonial: {
         text: "Swift-Garden transformed our plant business. The intuitive interface and robust features helped us increase online sales by 300%.",
         author: "Sarah Johnson",
-        role: "Plant Store Owner"
-      }
+        role: "Plant Store Owner",
+      },
+      caseStudyLink:
+        "https://portfolio-mashuq.vercel.app/projects/676edf92298c166a20883b8b",
     },
     {
       id: 2,
-      title: 'Bikease',
-      subtitle: 'Bike Rental Platform',
-      description: 'A comprehensive bike rental management system with real-time tracking, booking system, and payment integration.',
+      title: "Bikease",
+      subtitle: "Bike Rental Platform",
+      description:
+        "A comprehensive bike rental management system with real-time tracking, booking system, and payment integration.",
       longDescription: `Bikease revolutionizes bike rental services with a modern, user-friendly platform. The system handles everything from bike availability tracking to customer management and payment processing.\n\nFeatures include GPS tracking for rented bikes, automated pricing based on duration and bike type, customer loyalty programs, and comprehensive reporting for business insights. The mobile-responsive design ensures seamless experience across all devices.`,
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
-      technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'Tailwind CSS', 'Stripe'],
-      liveUrl: 'https://bikease-demo.vercel.app',
-      githubUrl: 'https://github.com/mashuq/bikease',
-      category: 'Rental Platform',
-      status: 'Live',
+      image:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+      technologies: [
+        "Next.js",
+        "PostgreSQL",
+        "Prisma",
+        "Tailwind CSS",
+        "Stripe",
+      ],
+      liveUrl: "https://bike-rental-frontend-xi.vercel.app/",
+      githubUrl: "https://github.com/mashuq/bikease",
+      category: "Rental Platform",
+      status: "Live",
       metrics: {
-        users: '1.8K+',
-        bookings: '3.2K+',
-        rating: '4.7/5',
-        uptime: '99.8%'
+        users: "1.8K+",
+        bookings: "3.2K+",
+        rating: "4.7/5",
+        uptime: "99.8%",
       },
       testimonial: {
         text: "Bikease streamlined our rental operations completely. The automated system reduced our manual work by 80% while improving customer satisfaction.",
         author: "Mike Chen",
-        role: "Bike Rental Business Owner"
-      }
+        role: "Bike Rental Business Owner",
+      },
+      caseStudyLink:
+        "https://portfolio-mashuq.vercel.app/projects/676edf92298c166a20883b8c",
     },
     {
       id: 3,
-      title: 'TaskFlow Pro',
-      subtitle: 'Project Management Tool',
-      description: 'A collaborative project management platform with real-time updates, team collaboration features, and advanced analytics.',
-      longDescription: `TaskFlow Pro is designed for modern teams who need efficient project management without complexity. The platform combines powerful features with an intuitive interface to help teams stay organized and productive.\n\nCore features include kanban boards, time tracking, team collaboration tools, file sharing, automated notifications, and comprehensive project analytics. The platform supports multiple project methodologies including Agile and Waterfall.`,
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-      technologies: ['React', 'Node.js', 'Socket.io', 'PostgreSQL', 'Redis'],
-      liveUrl: 'https://taskflow-pro-demo.vercel.app',
-      githubUrl: 'https://github.com/mashuq/taskflow-pro',
-      category: 'Productivity',
-      status: 'Live',
+      title: "Pet Care",
+      subtitle: "Social Media for Pet Owners",
+      description:
+        "A social media platform dedicated to pet owners for sharing experiences, tips, and connecting with other pet enthusiasts.",
+      longDescription: `Pet Care is a web-based social media platform tailored for pet lovers to connect, share, and explore all things related to pet care. Users can create profiles for themselves and their pets, post updates, share pet care tips, and engage with a community of like-minded individuals. The platform features discussion forums, event planning for pet meetups, and resources for pet health and grooming. Pet Care fosters a vibrant and supportive community while helping pet owners access trusted advice and services.`,
+      image:
+        "https://res.cloudinary.com/dhe24bfs8/image/upload/v1735321412/Screenshot_2024-12-19_135023_qvicnk.png",
+      technologies: ["React", "Node.js", "Socket.io", "PostgreSQL", "Redis"],
+      liveUrl: "https://pet-care-client-eight.vercel.app/",
+      githubUrl: "https://github.com/mashuq/taskflow-pro",
+      category: "Productivity",
+      status: "Live",
       metrics: {
-        users: '5.1K+',
-        projects: '12K+',
-        rating: '4.9/5',
-        uptime: '99.9%'
+        users: "5.1K+",
+        projects: "12K+",
+        rating: "4.9/5",
+        uptime: "99.9%",
       },
       testimonial: {
         text: "TaskFlow Pro became essential for our remote team. The real-time collaboration features and intuitive design boosted our productivity significantly.",
         author: "Emily Rodriguez",
-        role: "Project Manager, Tech Startup"
-      }
+        role: "Project Manager, Tech Startup",
+      },
+      caseStudyLink:
+        "https://portfolio-mashuq.vercel.app/projects/676edf92298c166a20883b8e",
     },
     {
       id: 4,
-      title: 'FinanceTracker',
-      subtitle: 'Personal Finance Manager',
-      description: 'A comprehensive personal finance management app with expense tracking, budget planning, and financial insights.',
-      longDescription: `FinanceTracker helps individuals take control of their financial life through intelligent tracking and analysis. The app provides comprehensive insights into spending patterns and helps users make informed financial decisions.\n\nFeatures include automatic expense categorization, budget creation and monitoring, bill reminders, financial goal tracking, and detailed analytics with visual reports. The app also includes investment tracking and net worth calculations.`,
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Chart.js', 'Plaid API'],
-      liveUrl: 'https://financetracker-demo.vercel.app',
-      githubUrl: 'https://github.com/mashuq/financetracker',
-      category: 'Finance',
-      status: 'Live',
+      title: "Sportize",
+      subtitle: "Sell Sports Equipment Online",
+      description:
+        "A dynamic e-commerce platform for buying and selling sports equipment with user reviews, secure payments, and inventory management.",
+      longDescription: `Sportize is an all-in-one e-commerce solution designed for sports enthusiasts to buy and sell sports equipment. The platform features a user-friendly interface, advanced search and filtering options, secure payment processing, and a robust inventory management system for sellers.\n\nKey functionalities include user reviews and ratings, wishlists, promotional discounts, and a responsive design optimized for both desktop and mobile shopping experiences. Sportize empowers users to find the best deals on sports gear while providing sellers with the tools they need to manage their online stores effectively.`,
+      image:
+        "https://res.cloudinary.com/dhe24bfs8/image/upload/v1735321320/Screenshot_2024-12-19_135328_vldhkj.png",
+      technologies: [
+    
+        "Node.js",
+        "MongoDB",
+        "React js"
+      ],
+      liveUrl: "https://sportize-client.vercel.app/",
+      githubUrl: "https://sportize-client.vercel.app/",
+   
+      status: "Live",
       metrics: {
-        users: '3.7K+',
-        transactions: '45K+',
-        rating: '4.6/5',
-        uptime: '99.7%'
+        users: "3.7K+",
+        transactions: "45K+",
+        rating: "4.6/5",
+        uptime: "99.7%",
       },
       testimonial: {
-        text: "FinanceTracker gave me complete visibility into my spending habits. I\'ve saved 25% more money since using this app.",
+        text: "FinanceTracker gave me complete visibility into my spending habits. I've saved 25% more money since using this app.",
         author: "David Park",
-        role: "Software Engineer"
-      }
-    }
+        role: "Software Engineer",
+      },
+    },
+    {
+      id: 5,
+      title: "MAKERZ",
+      subtitle: "Wood Cutter Hiring Platform",
+      description:
+        "A platform connecting customers with professional wood cutters for on-demand services, featuring scheduling, reviews, and secure payments.",
+      longDescription: `MAKERZ is a specialized platform that connects customers with skilled wood cutters for various woodworking needs. The platform allows users to browse profiles of professional wood cutters, read reviews, and book services directly through the app.\n\nKey features include real-time availability scheduling, secure payment processing, customer reviews and ratings, and a user-friendly interface for both customers and service providers. MAKERZ aims to streamline the process of finding and hiring reliable wood cutting services while ensuring quality and customer satisfaction.
+
+      This is a private project and the partial source code publicly available.
+      
+      `,
+      image:
+        "https://res.cloudinary.com/dilkirxwz/image/upload/v1765879339/Screenshot_2025-12-16_155632_zneb0h.png",
+      technologies: [
+        "React Js",
+        "Node.js",
+        "PostgreSQL",
+   
+        
+      ],
+      liveUrl: "https://makerz-client.vercel.app/",
+      githubUrl: "https://github.com/mashuq0068/wood-cutter",
+   
+      status: "Live",
+      metrics: {
+        users: "3.7K+",
+        transactions: "45K+",
+        rating: "4.6/5",
+        uptime: "99.7%",
+      },
+      testimonial: {
+        text: "FinanceTracker gave me complete visibility into my spending habits. I've saved 25% more money since using this app.",
+        author: "David Park",
+        role: "Software Engineer",
+      },
+    },
+    {
+      id: 6,
+      title: "BigSpontino",
+      subtitle: "Resturant Website & Delivery App",
+      description:
+        "A full-featured restaurant website and delivery app with menu browsing, online ordering, real-time order tracking, and customer reviews.",
+      longDescription: `BigSpontino is a comprehensive restaurant management platform that includes both a customer-facing website and a delivery application. The platform allows users to browse the restaurant menu, place online orders for pickup or delivery, and track their orders in real-time.\n\nKey features include an intuitive menu interface with detailed item descriptions and images, secure payment processing, customer reviews and ratings, and a responsive design optimized for both desktop and mobile devices. The delivery app includes GPS tracking for orders, estimated delivery times, and notifications to keep customers informed throughout the process. BigSpontino aims to enhance the dining experience by providing convenience and efficiency for both customers and restaurant staff.
+      
+      As this is a private project, the partial source code is publicly available.`,
+      image:
+        "https://res.cloudinary.com/dilkirxwz/image/upload/v1765879319/Screenshot_2025-12-16_153939_k0egsy.png",
+      technologies: [
+        "React js",
+        "Node.js",
+        "MongoDB",
+       
+      ],
+      liveUrl: "https://bigspontino-old.vercel.app/",
+      githubUrl: "https://github.com/mashuq0068/bigspontino",
+
+      status: "Live",
+      metrics: {
+        users: "3.7K+",
+        transactions: "45K+",
+        rating: "4.6/5",
+        uptime: "99.7%",
+      },
+      testimonial: {
+        text: "FinanceTracker gave me complete visibility into my spending habits. I've saved 25% more money since using this app.",
+        author: "David Park",
+        role: "Software Engineer",
+      },
+    },
   ];
 
   useEffect(() => {
@@ -136,14 +230,18 @@ const FeaturedProjects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-background to-muted/10">
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-b from-background to-muted/10"
+    >
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my latest work showcasing modern web development practices, user-centered design, and scalable architecture solutions.
+            Explore my latest work showcasing modern web development practices,
+            user-centered design, and scalable architecture solutions.
           </p>
         </div>
 
@@ -156,7 +254,7 @@ const FeaturedProjects = () => {
                 <Image
                   src={projects[activeProject].image}
                   alt={projects[activeProject].title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-success text-success-foreground px-3 py-1 rounded-full text-xs font-medium">
@@ -186,7 +284,9 @@ const FeaturedProjects = () => {
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-foreground mb-3">Technologies Used:</h4>
+                  <h4 className="text-sm font-semibold text-foreground mb-3">
+                    Technologies Used:
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {projects[activeProject].technologies.map((tech, index) => (
                       <span
@@ -199,21 +299,13 @@ const FeaturedProjects = () => {
                   </div>
                 </div>
 
-                {/* Metrics */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  {Object.entries(projects[activeProject].metrics).map(([key, value]) => (
-                    <div key={key} className="text-center bg-muted/20 rounded-lg p-3">
-                      <div className="text-lg font-bold text-foreground">{value}</div>
-                      <div className="text-xs text-muted-foreground capitalize">{key}</div>
-                    </div>
-                  ))}
-                </div>
-
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
                     variant="default"
-                    onClick={() => window.open(projects[activeProject].liveUrl, '_blank')}
+                    onClick={() =>
+                      window.open(projects[activeProject].liveUrl,  "_blank")
+                    }
                     iconName="ExternalLink"
                     iconPosition="right"
                     className="flex-1"
@@ -222,7 +314,12 @@ const FeaturedProjects = () => {
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => openModal(projects[activeProject])}
+                    onClick={() =>
+                      projects[activeProject]?.caseStudyLink
+                        ? (window.location.href =
+                            projects[activeProject].caseStudyLink, "_blank")
+                        : openModal(projects[activeProject])
+                    }
                     iconName="Eye"
                     iconPosition="right"
                     className="flex-1"
@@ -257,21 +354,25 @@ const FeaturedProjects = () => {
               onClick={() => setActiveProject(index)}
               className={`relative group overflow-hidden rounded-lg transition-all duration-300 ${
                 index === activeProject
-                  ? 'ring-2 ring-primary tech-shadow-lg'
-                  : 'hover:tech-shadow'
+                  ? "ring-2 ring-primary tech-shadow-lg"
+                  : "hover:tech-shadow"
               }`}
             >
               <div className="aspect-video overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
                 <div className="text-left">
-                  <h4 className="text-sm font-semibold text-foreground">{project.title}</h4>
-                  <p className="text-xs text-muted-foreground">{project.category}</p>
+                  <h4 className="text-sm font-semibold text-foreground">
+                    {project.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    {project.category}
+                  </p>
                 </div>
               </div>
             </button>
@@ -285,8 +386,12 @@ const FeaturedProjects = () => {
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{selectedModal.title}</h3>
-                    <p className="text-accent font-medium">{selectedModal.subtitle}</p>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                      {selectedModal.title}
+                    </h3>
+                    <p className="text-accent font-medium">
+                      {selectedModal.subtitle}
+                    </p>
                   </div>
                   <button
                     onClick={closeModal}
@@ -301,17 +406,21 @@ const FeaturedProjects = () => {
                     <Image
                       src={selectedModal.image}
                       alt={selectedModal.title}
-                      className="w-full h-64 object-cover rounded-lg mb-6"
+                      className="w-full h-64  rounded-lg mb-6"
                     />
-                    
+
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Project Links:</h4>
+                        <h4 className="font-semibold text-foreground mb-2">
+                          Project Links:
+                        </h4>
                         <div className="flex gap-3">
                           <Button
                             variant="default"
                             size="sm"
-                            onClick={() => window.open(selectedModal.liveUrl, '_blank')}
+                            onClick={() =>
+                              window.open(selectedModal.liveUrl, "_blank")
+                            }
                             iconName="ExternalLink"
                             iconPosition="right"
                           >
@@ -320,7 +429,9 @@ const FeaturedProjects = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => window.open(selectedModal.githubUrl, '_blank')}
+                            onClick={() =>
+                              window.open(selectedModal.githubUrl, "_blank")
+                            }
                             iconName="Github"
                             iconPosition="right"
                           >
@@ -333,14 +444,18 @@ const FeaturedProjects = () => {
 
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold text-foreground mb-3">Project Overview:</h4>
+                      <h4 className="font-semibold text-foreground mb-3">
+                        Project Overview:
+                      </h4>
                       <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
                         {selectedModal.longDescription}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-foreground mb-3">Technologies:</h4>
+                      <h4 className="font-semibold text-foreground mb-3">
+                        Technologies:
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedModal.technologies.map((tech, index) => (
                           <span
@@ -350,29 +465,6 @@ const FeaturedProjects = () => {
                             {tech}
                           </span>
                         ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Project Metrics:</h4>
-                      <div className="grid grid-cols-2 gap-3">
-                        {Object.entries(selectedModal.metrics).map(([key, value]) => (
-                          <div key={key} className="bg-muted/20 rounded-lg p-3 text-center">
-                            <div className="text-lg font-bold text-foreground">{value}</div>
-                            <div className="text-xs text-muted-foreground capitalize">{key}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-muted/20 rounded-lg p-4">
-                      <h4 className="font-semibold text-foreground mb-3">Client Testimonial:</h4>
-                      <blockquote className="text-muted-foreground italic mb-3">
-                        "{selectedModal.testimonial.text}"
-                      </blockquote>
-                      <div className="text-sm">
-                        <div className="font-medium text-foreground">{selectedModal.testimonial.author}</div>
-                        <div className="text-muted-foreground">{selectedModal.testimonial.role}</div>
                       </div>
                     </div>
                   </div>
