@@ -18,7 +18,8 @@ const FeaturedProjects = () => {
       longDescription: `Swift-Garden is a comprehensive e-commerce solution built for plant lovers. The platform features an intuitive product catalog with advanced filtering options, user authentication, shopping cart functionality, and integrated payment processing.\n\nKey features include real-time inventory management, user reviews and ratings, wishlist functionality, and responsive design optimized for mobile shopping. The admin dashboard provides comprehensive analytics and order management capabilities.`,
       image:
         "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+      technologies: ["Next js", "Node js",
+        "Express", "PostgresSQL", "Prisma", "Express", "Stripe"],
       liveUrl: "https://swift-garden-frontned.vercel.app/",
       githubUrl: "https://github.com/mashuq/swift-garden",
       category: "E-commerce",
@@ -47,11 +48,12 @@ const FeaturedProjects = () => {
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
       technologies: [
-        "Next.js",
-        "PostgreSQL",
-        "Prisma",
+        "React js",
+        "Node js",
+        "Express",
+        "MongoDB",
         "Tailwind CSS",
-        "Stripe",
+    
       ],
       liveUrl: "https://bike-rental-frontend-xi.vercel.app/",
       githubUrl: "https://github.com/mashuq/bikease",
@@ -80,7 +82,8 @@ const FeaturedProjects = () => {
       longDescription: `Pet Care is a web-based social media platform tailored for pet lovers to connect, share, and explore all things related to pet care. Users can create profiles for themselves and their pets, post updates, share pet care tips, and engage with a community of like-minded individuals. The platform features discussion forums, event planning for pet meetups, and resources for pet health and grooming. Pet Care fosters a vibrant and supportive community while helping pet owners access trusted advice and services.`,
       image:
         "https://res.cloudinary.com/dhe24bfs8/image/upload/v1735321412/Screenshot_2024-12-19_135023_qvicnk.png",
-      technologies: ["React", "Node.js", "Socket.io", "PostgreSQL", "Redis"],
+      technologies: ["Next js",  "PostgreSQL", "Node js",
+        "Express",],
       liveUrl: "https://pet-care-client-eight.vercel.app/",
       githubUrl: "https://github.com/mashuq/taskflow-pro",
       category: "Productivity",
@@ -406,7 +409,7 @@ const FeaturedProjects = () => {
                     <Image
                       src={selectedModal.image}
                       alt={selectedModal.title}
-                      className="w-full h-64  rounded-lg mb-6"
+                      className="w-full h-64 object-contain  rounded-lg mb-6"
                     />
 
                     <div className="space-y-4">
