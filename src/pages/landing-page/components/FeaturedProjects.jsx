@@ -8,199 +8,161 @@ const FeaturedProjects = () => {
   const [selectedModal, setSelectedModal] = useState(null);
   const [autoPlay, setAutoPlay] = useState(true);
 
+  /**
+   * NOTE: Most of these are organization / client projects built under an
+   * employer or NDA. Their source code and live URLs are private, so we only
+   * showcase what they are, the organization, my role and the tech used — via
+   * an in-page details popup (no public case-study pages or repo links).
+   *
+   * Clipzen is my own public product, so it links out to the live site.
+   */
   const projects = [
     {
       id: 1,
-      title: "Swift-Garden",
-      subtitle: "E-commerce Plant Store",
+      title: "Clipzen",
+      subtitle: "AI Short-Form Video Generator",
+      organization: "Personal Product · clipzen.pro",
+      role: "Founder & Full-stack Developer",
       description:
-        "A modern e-commerce platform for plant enthusiasts with advanced filtering, wishlist functionality, and seamless checkout experience.",
-      longDescription: `Swift-Garden is a comprehensive e-commerce solution built for plant lovers. The platform features an intuitive product catalog with advanced filtering options, user authentication, shopping cart functionality, and integrated payment processing.\n\nKey features include real-time inventory management, user reviews and ratings, wishlist functionality, and responsive design optimized for mobile shopping. The admin dashboard provides comprehensive analytics and order management capabilities.`,
-      image:
-        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop",
-      technologies: ["Next js", "Node js",
-        "Express", "PostgresSQL", "Prisma", "Express", "Stripe"],
-      liveUrl: "https://swift-garden-frontned.vercel.app/",
-      githubUrl: "https://github.com/mashuq/swift-garden",
-      category: "E-commerce",
+        "An AI SaaS that turns long videos and podcasts into viral, ready-to-post vertical shorts — automatic hook detection, smart reframing and animated captions in minutes.",
+      longDescription: `Clipzen is my own public product — an AI-powered video editor that turns long-form content (podcasts, interviews, livestreams and lectures up to a few hours long) into 10–40 scroll-stopping vertical clips in just a few minutes.\n\nThe AI Hook Detector analyses speech, emotion, facial expressions, motion and pacing to find the most engaging moments. It then auto-reframes footage to a face-aware 9:16 format, burns in animated on-beat captions, and can publish straight to TikTok, Instagram Reels, YouTube Shorts, LinkedIn and X.\n\nI designed and built the product end-to-end: the marketing site, the processing pipeline, billing/credits, and the AI + media tooling that powers the clip generation.`,
+      image: "/assets/images/clipzen.png",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "AI / ML",
+        "FFmpeg",
+        "PostgreSQL",
+        "Tailwind CSS",
+      ],
+      highlights: [
+        "AI Hook Detector ranks the most viral moments",
+        "Face-aware auto-reframe to vertical 9:16",
+        "Animated, on-beat auto captions & transcripts",
+        "One-tap publishing to TikTok, Reels & Shorts",
+      ],
+      liveUrl: "https://clipzen.pro",
+      category: "AI SaaS Product",
+      isPublic: true,
       status: "Live",
-      metrics: {
-        users: "2.5K+",
-        orders: "850+",
-        rating: "4.8/5",
-        uptime: "99.9%",
-      },
-      testimonial: {
-        text: "Swift-Garden transformed our plant business. The intuitive interface and robust features helped us increase online sales by 300%.",
-        author: "Sarah Johnson",
-        role: "Plant Store Owner",
-      },
-      caseStudyLink:
-        "https://portfolio-mashuq.vercel.app/projects/676edf92298c166a20883b8b",
     },
     {
       id: 2,
-      title: "Bikease",
-      subtitle: "Bike Rental Platform",
+      title: "Enterprise ERP System",
+      subtitle: "Business Operations Platform",
+      organization: "Alfastack Solution Pvt. Ltd. (India)",
+      role: "Full-stack Developer",
       description:
-        "A comprehensive bike rental management system with real-time tracking, booking system, and payment integration.",
-      longDescription: `Bikease revolutionizes bike rental services with a modern, user-friendly platform. The system handles everything from bike availability tracking to customer management and payment processing.\n\nFeatures include GPS tracking for rented bikes, automated pricing based on duration and bike type, customer loyalty programs, and comprehensive reporting for business insights. The mobile-responsive design ensures seamless experience across all devices.`,
+        "ERP modules for enterprise clients — automated workflows, computer-vision modules and backend integrations built on Frappe and Node.js.",
+      longDescription: `An enterprise ERP platform I worked on at Alfastack Solution to streamline business operations for enterprise clients.\n\nI built and integrated full-stack modules on top of Frappe and Node.js, developed computer-vision modules and automated workflows, and optimized database performance for high-traffic, data-heavy operations.\n\nWork covered backend service integration, role-based access, and reusable front-end components used across multiple internal modules.`,
       image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       technologies: [
-        "React js",
-        "Node js",
-        "Express",
-        "MongoDB",
-        "Tailwind CSS",
-    
+        "Frappe",
+        "Python",
+        "Node.js",
+        "React.js",
+        "PostgreSQL",
+        "Computer Vision",
       ],
-      liveUrl: "https://bike-rental-frontend-xi.vercel.app/",
-      githubUrl: "https://github.com/mashuq/bikease",
-      category: "Rental Platform",
-      status: "Live",
-      metrics: {
-        users: "1.8K+",
-        bookings: "3.2K+",
-        rating: "4.7/5",
-        uptime: "99.8%",
-      },
-      testimonial: {
-        text: "Bikease streamlined our rental operations completely. The automated system reduced our manual work by 80% while improving customer satisfaction.",
-        author: "Mike Chen",
-        role: "Bike Rental Business Owner",
-      },
-      caseStudyLink:
-        "https://portfolio-mashuq.vercel.app/projects/676edf92298c166a20883b8c",
+      highlights: [
+        "Automated enterprise workflows",
+        "Computer-vision driven modules",
+        "Optimized database performance",
+        "Role-based access & integrations",
+      ],
+      category: "ERP / Enterprise",
+      isPublic: false,
+      status: "Private",
     },
     {
       id: 3,
-      title: "Pet Care",
-      subtitle: "Social Media for Pet Owners",
+      title: "University Management System",
+      subtitle: "Academic Administration Platform",
+      organization: "Code Prophet (Khulna, Bangladesh)",
+      role: "Frontend Developer",
       description:
-        "A social media platform dedicated to pet owners for sharing experiences, tips, and connecting with other pet enthusiasts.",
-      longDescription: `Pet Care is a web-based social media platform tailored for pet lovers to connect, share, and explore all things related to pet care. Users can create profiles for themselves and their pets, post updates, share pet care tips, and engage with a community of like-minded individuals. The platform features discussion forums, event planning for pet meetups, and resources for pet health and grooming. Pet Care fosters a vibrant and supportive community while helping pet owners access trusted advice and services.`,
+        "A dynamic management system for universities — admissions, student records and results with interactive admin dashboards and reusable UI components.",
+      longDescription: `A university management platform I helped build at Code Prophet to digitise academic administration for institutional clients.\n\nI developed responsive, dynamic interfaces for admissions, student records, results and faculty management using React, Node.js and Bootstrap. I implemented interactive dashboards, data visualization and a library of reusable UI components shared across modules.\n\nThe focus was a clean, responsive experience for administrators handling large volumes of student data.`,
       image:
-        "https://res.cloudinary.com/dhe24bfs8/image/upload/v1735321412/Screenshot_2024-12-19_135023_qvicnk.png",
-      technologies: ["Next js",  "PostgreSQL", "Node js",
-        "Express",],
-      liveUrl: "https://pet-care-client-eight.vercel.app/",
-      githubUrl: "https://github.com/mashuq/taskflow-pro",
-      category: "Productivity",
-      status: "Live",
-      metrics: {
-        users: "5.1K+",
-        projects: "12K+",
-        rating: "4.9/5",
-        uptime: "99.9%",
-      },
-      testimonial: {
-        text: "TaskFlow Pro became essential for our remote team. The real-time collaboration features and intuitive design boosted our productivity significantly.",
-        author: "Emily Rodriguez",
-        role: "Project Manager, Tech Startup",
-      },
-      caseStudyLink:
-        "https://portfolio-mashuq.vercel.app/projects/676edf92298c166a20883b8e",
+        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop",
+      technologies: ["React.js", "Node.js", "Bootstrap", "REST API"],
+      highlights: [
+        "Admissions, records & results modules",
+        "Interactive admin dashboards",
+        "Reusable component library",
+        "Fully responsive UI",
+      ],
+      category: "Management System",
+      isPublic: false,
+      status: "Private",
     },
     {
       id: 4,
-      title: "Sportize",
-      subtitle: "Sell Sports Equipment Online",
+      title: "Hospital Management System",
+      subtitle: "Healthcare Administration Platform",
+      organization: "Code Prophet (Khulna, Bangladesh)",
+      role: "Frontend Developer",
       description:
-        "A dynamic e-commerce platform for buying and selling sports equipment with user reviews, secure payments, and inventory management.",
-      longDescription: `Sportize is an all-in-one e-commerce solution designed for sports enthusiasts to buy and sell sports equipment. The platform features a user-friendly interface, advanced search and filtering options, secure payment processing, and a robust inventory management system for sellers.\n\nKey functionalities include user reviews and ratings, wishlists, promotional discounts, and a responsive design optimized for both desktop and mobile shopping experiences. Sportize empowers users to find the best deals on sports gear while providing sellers with the tools they need to manage their online stores effectively.`,
+        "A hospital management platform handling patients, appointments and records with data-visualization dashboards and responsive, reusable components.",
+      longDescription: `A hospital management system I worked on at Code Prophet to help healthcare clients manage day-to-day operations.\n\nI built dynamic interfaces for patient management, appointments, billing and medical records using React, Node.js and Bootstrap. I implemented interactive dashboards and data visualization so staff could track operations at a glance.\n\nReusable UI components and a responsive layout kept the experience consistent across the platform's many modules.`,
       image:
-        "https://res.cloudinary.com/dhe24bfs8/image/upload/v1735321320/Screenshot_2024-12-19_135328_vldhkj.png",
-      technologies: [
-    
-        "Node.js",
-        "MongoDB",
-        "React js"
+        "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&h=400&fit=crop",
+      technologies: ["React.js", "Node.js", "Bootstrap", "Chart.js"],
+      highlights: [
+        "Patient, appointment & records modules",
+        "Operational data-visualization dashboards",
+        "Reusable, responsive UI components",
+        "Built for multiple clinic clients",
       ],
-      liveUrl: "https://sportize-client.vercel.app/",
-      githubUrl: "https://sportize-client.vercel.app/",
-   
-      status: "Live",
-      metrics: {
-        users: "3.7K+",
-        transactions: "45K+",
-        rating: "4.6/5",
-        uptime: "99.7%",
-      },
-      testimonial: {
-        text: "FinanceTracker gave me complete visibility into my spending habits. I've saved 25% more money since using this app.",
-        author: "David Park",
-        role: "Software Engineer",
-      },
+      category: "Management System",
+      isPublic: false,
+      status: "Private",
     },
     {
       id: 5,
-      title: "MAKERZ",
-      subtitle: "Wood Cutter Hiring Platform",
+      title: "Restaurant Management & Ordering",
+      subtitle: "Restaurant Control & Delivery System",
+      organization: "Private Client Project",
+      role: "Full-stack Developer",
       description:
-        "A platform connecting customers with professional wood cutters for on-demand services, featuring scheduling, reviews, and secure payments.",
-      longDescription: `MAKERZ is a specialized platform that connects customers with skilled wood cutters for various woodworking needs. The platform allows users to browse profiles of professional wood cutters, read reviews, and book services directly through the app.\n\nKey features include real-time availability scheduling, secure payment processing, customer reviews and ratings, and a user-friendly interface for both customers and service providers. MAKERZ aims to streamline the process of finding and hiring reliable wood cutting services while ensuring quality and customer satisfaction.
-
-      This is a private project and the partial source code publicly available.
-      
-      `,
+        "A restaurant control system with menu management, online ordering, real-time order tracking and an admin dashboard for staff operations.",
+      longDescription: `A restaurant management and ordering platform built for a private client to run both the customer-facing experience and back-of-house operations.\n\nIt covers menu and inventory management, online ordering for pickup or delivery, real-time order tracking, and an admin dashboard for staff. I worked across the stack on the ordering flow, dashboard and API integration.\n\nAs a private client project, the source code and live deployment aren't publicly shareable.`,
       image:
-        "https://res.cloudinary.com/dilkirxwz/image/upload/v1765879339/Screenshot_2025-12-16_155632_zneb0h.png",
-      technologies: [
-        "React Js",
-        "Node.js",
-        "PostgreSQL",
-   
-        
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
+      technologies: ["React.js", "Node.js", "MongoDB", "Tailwind CSS"],
+      highlights: [
+        "Menu & inventory management",
+        "Online ordering for pickup / delivery",
+        "Real-time order tracking",
+        "Staff operations dashboard",
       ],
-      liveUrl: "https://makerz-client.vercel.app/",
-      githubUrl: "https://github.com/mashuq0068/wood-cutter",
-   
-      status: "Live",
-      metrics: {
-        users: "3.7K+",
-        transactions: "45K+",
-        rating: "4.6/5",
-        uptime: "99.7%",
-      },
-      testimonial: {
-        text: "FinanceTracker gave me complete visibility into my spending habits. I've saved 25% more money since using this app.",
-        author: "David Park",
-        role: "Software Engineer",
-      },
+      category: "Restaurant System",
+      isPublic: false,
+      status: "Private",
     },
     {
       id: 6,
-      title: "BigSpontino",
-      subtitle: "Resturant Website & Delivery App",
+      title: "Learning Management System",
+      subtitle: "E-Learning Platform (LMS)",
+      organization: "TS4U (USA)",
+      role: "Frontend Developer",
       description:
-        "A full-featured restaurant website and delivery app with menu browsing, online ordering, real-time order tracking, and customer reviews.",
-      longDescription: `BigSpontino is a comprehensive restaurant management platform that includes both a customer-facing website and a delivery application. The platform allows users to browse the restaurant menu, place online orders for pickup or delivery, and track their orders in real-time.\n\nKey features include an intuitive menu interface with detailed item descriptions and images, secure payment processing, customer reviews and ratings, and a responsive design optimized for both desktop and mobile devices. The delivery app includes GPS tracking for orders, estimated delivery times, and notifications to keep customers informed throughout the process. BigSpontino aims to enhance the dining experience by providing convenience and efficiency for both customers and restaurant staff.
-      
-      As this is a private project, the partial source code is publicly available.`,
+        "An interactive LMS platform — course modules, dynamic components and optimized cross-browser performance, integrated with backend APIs.",
+      longDescription: `A Learning Management System (LMS) I worked on at TS4U to deliver interactive, user-friendly online learning.\n\nI built dynamic course modules and interactive components with JavaScript, React.js and Node.js, optimized performance and improved cross-browser compatibility. I collaborated closely with backend engineers to integrate APIs, enhance data flow and streamline the overall learning experience.`,
       image:
-        "https://res.cloudinary.com/dilkirxwz/image/upload/v1765879319/Screenshot_2025-12-16_153939_k0egsy.png",
-      technologies: [
-        "React js",
-        "Node.js",
-        "MongoDB",
-       
+        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop",
+      technologies: ["React.js", "JavaScript", "Node.js", "REST API"],
+      highlights: [
+        "Interactive course modules",
+        "Performance-optimized components",
+        "Cross-browser compatibility",
+        "Close API integration with backend",
       ],
-      liveUrl: "https://bigspontino-old.vercel.app/",
-      githubUrl: "https://github.com/mashuq0068/bigspontino",
-
-      status: "Live",
-      metrics: {
-        users: "3.7K+",
-        transactions: "45K+",
-        rating: "4.6/5",
-        uptime: "99.7%",
-      },
-      testimonial: {
-        text: "FinanceTracker gave me complete visibility into my spending habits. I've saved 25% more money since using this app.",
-        author: "David Park",
-        role: "Software Engineer",
-      },
+      category: "E-Learning",
+      isPublic: false,
+      status: "Private",
     },
   ];
 
@@ -232,6 +194,8 @@ const FeaturedProjects = () => {
     setActiveProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
+  const current = projects[activeProject];
+
   return (
     <section
       id="projects"
@@ -243,8 +207,9 @@ const FeaturedProjects = () => {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my latest work showcasing modern web development practices,
-            user-centered design, and scalable architecture solutions.
+            A mix of my own products and the organization &amp; client projects
+            I've shipped. Most client work is private/under NDA, so each card
+            opens a quick overview of what it is, my role and the tech used.
           </p>
         </div>
 
@@ -253,20 +218,26 @@ const FeaturedProjects = () => {
           <div className="bg-card border border-border rounded-lg overflow-hidden tech-shadow">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Project Image */}
-              <div className="relative h-64 lg:h-96 overflow-hidden">
+              <div className="relative h-64 lg:h-96 overflow-hidden bg-muted/30">
                 <Image
-                  src={projects[activeProject].image}
-                  alt={projects[activeProject].title}
-                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                  src={current.image}
+                  alt={current.title}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-success text-success-foreground px-3 py-1 rounded-full text-xs font-medium">
-                    {projects[activeProject].status}
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      current.isPublic
+                        ? "bg-success text-success-foreground"
+                        : "bg-foreground/80 text-background"
+                    }`}
+                  >
+                    {current.isPublic ? "Live · Public" : "Private · NDA"}
                   </span>
                 </div>
                 <div className="absolute top-4 right-4">
                   <span className="bg-card/90 backdrop-blur-sm text-foreground px-3 py-1 rounded-full text-xs font-medium">
-                    {projects[activeProject].category}
+                    {current.category}
                   </span>
                 </div>
               </div>
@@ -274,14 +245,18 @@ const FeaturedProjects = () => {
               {/* Project Details */}
               <div className="p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    {projects[activeProject].title}
+                  <h3 className="text-2xl font-bold text-foreground mb-1">
+                    {current.title}
                   </h3>
-                  <p className="text-accent font-medium mb-4">
-                    {projects[activeProject].subtitle}
+                  <p className="text-accent font-medium mb-2">
+                    {current.subtitle}
                   </p>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                    <Icon name="Building2" size={14} />
+                    <span>{current.organization}</span>
+                  </div>
                   <p className="text-muted-foreground leading-relaxed">
-                    {projects[activeProject].description}
+                    {current.description}
                   </p>
                 </div>
 
@@ -291,7 +266,7 @@ const FeaturedProjects = () => {
                     Technologies Used:
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {projects[activeProject].technologies.map((tech, index) => (
+                    {current.technologies.map((tech, index) => (
                       <span
                         key={index}
                         className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium"
@@ -304,30 +279,25 @@ const FeaturedProjects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
+                  {current.isPublic && current.liveUrl && (
+                    <Button
+                      variant="default"
+                      onClick={() => window.open(current.liveUrl, "_blank")}
+                      iconName="ExternalLink"
+                      iconPosition="right"
+                      className="flex-1"
+                    >
+                      Visit Live
+                    </Button>
+                  )}
                   <Button
-                    variant="default"
-                    onClick={() =>
-                      window.open(projects[activeProject].liveUrl,  "_blank")
-                    }
-                    iconName="ExternalLink"
-                    iconPosition="right"
-                    className="flex-1"
-                  >
-                    View Live Demo
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() =>
-                      projects[activeProject]?.caseStudyLink
-                        ? (window.location.href =
-                            projects[activeProject].caseStudyLink, "_blank")
-                        : openModal(projects[activeProject])
-                    }
+                    variant={current.isPublic ? "outline" : "default"}
+                    onClick={() => openModal(current)}
                     iconName="Eye"
                     iconPosition="right"
                     className="flex-1"
                   >
-                    Case Study
+                    View Details
                   </Button>
                 </div>
               </div>
@@ -350,7 +320,7 @@ const FeaturedProjects = () => {
         </div>
 
         {/* Project Thumbnails */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
             <button
               key={project.id}
@@ -361,14 +331,14 @@ const FeaturedProjects = () => {
                   : "hover:tech-shadow"
               }`}
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden bg-muted/30">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-4">
                 <div className="text-left">
                   <h4 className="text-sm font-semibold text-foreground">
                     {project.title}
@@ -384,12 +354,18 @@ const FeaturedProjects = () => {
 
         {/* Project Modal */}
         {selectedModal && (
-          <div className="fixed inset-0 z-200 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="bg-card border border-border rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto tech-shadow">
+          <div
+            className="fixed inset-0 z-200 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={closeModal}
+          >
+            <div
+              className="bg-card border border-border rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto tech-shadow"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                    <h3 className="text-2xl font-bold text-foreground mb-1">
                       {selectedModal.title}
                     </h3>
                     <p className="text-accent font-medium">
@@ -409,15 +385,42 @@ const FeaturedProjects = () => {
                     <Image
                       src={selectedModal.image}
                       alt={selectedModal.title}
-                      className="w-full h-64 object-contain  rounded-lg mb-6"
+                      className="w-full h-56 object-cover rounded-lg mb-6 bg-muted/30"
                     />
 
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-2">
-                          Project Links:
-                        </h4>
-                        <div className="flex gap-3">
+                    {/* Meta: organization & role */}
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-2">
+                        <Icon
+                          name="Building2"
+                          size={16}
+                          className="text-primary mt-0.5 flex-shrink-0"
+                        />
+                        <div>
+                          <p className="text-xs text-muted-foreground">
+                            Organization
+                          </p>
+                          <p className="text-sm font-medium text-foreground">
+                            {selectedModal.organization}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Icon
+                          name="UserCog"
+                          size={16}
+                          className="text-primary mt-0.5 flex-shrink-0"
+                        />
+                        <div>
+                          <p className="text-xs text-muted-foreground">My Role</p>
+                          <p className="text-sm font-medium text-foreground">
+                            {selectedModal.role}
+                          </p>
+                        </div>
+                      </div>
+
+                      {selectedModal.isPublic && selectedModal.liveUrl ? (
+                        <div className="pt-2">
                           <Button
                             variant="default"
                             size="sm"
@@ -427,21 +430,18 @@ const FeaturedProjects = () => {
                             iconName="ExternalLink"
                             iconPosition="right"
                           >
-                            Live Demo
-                          </Button>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() =>
-                              window.open(selectedModal.githubUrl, "_blank")
-                            }
-                            iconName="Github"
-                            iconPosition="right"
-                          >
-                            Source Code
+                            Visit Live Site
                           </Button>
                         </div>
-                      </div>
+                      ) : (
+                        <div className="flex items-center gap-2 pt-2 text-sm text-muted-foreground">
+                          <Icon name="Lock" size={14} />
+                          <span>
+                            Private / NDA project — source &amp; live URL not
+                            publicly shareable.
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -454,6 +454,31 @@ const FeaturedProjects = () => {
                         {selectedModal.longDescription}
                       </p>
                     </div>
+
+                    {selectedModal.highlights && (
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">
+                          What I Built / Highlights:
+                        </h4>
+                        <ul className="space-y-2">
+                          {selectedModal.highlights.map((item, index) => (
+                            <li
+                              key={index}
+                              className="flex items-start gap-2"
+                            >
+                              <Icon
+                                name="CheckCircle"
+                                size={16}
+                                className="text-success mt-0.5 flex-shrink-0"
+                              />
+                              <span className="text-sm text-muted-foreground">
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     <div>
                       <h4 className="font-semibold text-foreground mb-3">

@@ -11,40 +11,12 @@ const FloatingContactCTA = () => {
   const [autoShown, setAutoShown] = useState(false); // ensures 20s trigger happens only once
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 500;
-      setIsVisible(scrolled);
-
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        const rect = contactSection.getBoundingClientRect();
-        const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
-        setIsContactSectionVisible(isInView);
-      }
-    };
-
-    const handleMouseLeave = (e) => {
-      if (e.clientY <= 0) {
-        setShowExitIntent(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('mouseleave', handleMouseLeave);
-
-    // Show CTA automatically after 20 seconds, only once
-    const timer = setTimeout(() => {
+  setTimeout(() => {
       if (!autoShown) {
         setShowExitIntent(true);
-        setAutoShown(true);
+        setIsVisible(true);
       }
-    }, 20000); // 20 seconds
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      clearTimeout(timer);
-    };
+    }, 20000); 
   }, []);
 
   const scrollToContact = () => {
